@@ -195,7 +195,7 @@
 				'division' => $this->postingRepository->findAllDivisions($categories),
 				'careerLevel' => $this->postingRepository->findAllCareerLevels($categories),
 				'employmentType' => $this->postingRepository->findAllEmploymentTypes($categories),
-				'location' => $this->locationRepository->findAll($categories)->toArray(),
+				'location' => $this->locationRepository->findAll()->toArray(),
 			];
 		}
 

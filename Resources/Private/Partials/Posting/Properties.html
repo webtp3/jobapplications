@@ -31,7 +31,7 @@
 						<f:translate key="tx_jobapplications_domain_model_posting.employment_type"/>
 					</h6>
 				</div>
-				<div class="col-3">
+        <div class="col-3" itemprop="employmentType">
 					<f:for as="employmentType" each="{posting.deserializedEmploymentTypes}" iteration="iterator">
 						<f:translate key="fe.posting.employment.selector.{employmentType}"/>
 						<f:if condition="!{iterator.isLast}" then=","></f:if>
@@ -76,7 +76,7 @@
 		</f:if>
 		<f:if condition="{posting.roleDescription}">
 			<div class="col">
-				<div class="row">
+				<div class="row"  itemprop="responsibilities">
 					<h6>
 						<f:translate key="tx_jobapplications_domain_model_posting.role_description"/>
 					</h6>
@@ -88,7 +88,7 @@
 		</f:if>
 		<f:if condition="{posting.skillRequirements}">
 			<div class="col">
-				<div class="row">
+				<div class="row" itemprop="qualifications">
 					<h6>
 						<f:translate key="tx_jobapplications_domain_model_posting.skill_requirements"/>
 					</h6>
@@ -98,6 +98,8 @@
 				</div>
 			</div>
 		</f:if>
+		<g itemprop="datePosted"><f:format.date format="Y-m-d H:i:s">{posting.date}</f:format.date></g><br>
+
 		<f:if condition="{posting.benefits}">
 			<div class="col">
 				<div class="row">
@@ -118,7 +120,7 @@
 							<f:translate key="tx_jobapplications_domain_model_posting.base_salary"/>
 						</h6>
 					</div>
-					<div class="col-3">
+					<div class="col-3" itemprop="baseSalary">
 						{posting.baseSalary}
 					</div>
 				</f:if>

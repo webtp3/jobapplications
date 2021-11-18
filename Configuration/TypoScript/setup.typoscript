@@ -32,7 +32,7 @@ plugin.tx_jobapplications {
 	}
 
 	mvc {
-		#callDefaultActionIfActionCantBeResolved = 1
+		callDefaultActionIfActionCantBeResolved = 1
 	}
 
 	settings {
